@@ -7,7 +7,7 @@ import com.flp.ems.domain.Employee;
 
 public class EmployeeDaoImplForList implements IemployeeDao {
 	
-	List<Employee> list = new ArrayList<Employee>();
+	static List<Employee> list = new ArrayList<Employee>();
 
 	public void AddEmployee(Employee employee){
 		
@@ -25,6 +25,12 @@ public class EmployeeDaoImplForList implements IemployeeDao {
 		
 	}
 	public List<Employee> getAllEmployee(){
+		System.out.println("in dao");
+		for(Employee temp : this.list){
+			System.out.println(temp);	
+			
+		}
+		System.out.println("out of dao");
 		return list;
 	}
 }

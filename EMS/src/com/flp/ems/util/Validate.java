@@ -64,7 +64,13 @@ public class Validate {
 		else
 			return false;
 	}
-	
+	public static boolean validateNonEmpty(String s){
+		
+		if(s.length()!=0)
+			return true;
+		else 
+			return false;
+	}
 	
 	
 }

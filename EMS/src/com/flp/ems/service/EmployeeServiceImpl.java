@@ -68,16 +68,15 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	}
 	
 	public HashMap<String,String>[] getAllEmployee(){
-		List<Employee> l = new ArrayList<Employee>();
-		l = empdao.getAllEmployee();
+		List<Employee> l = empdao.getAllEmployee();
 		
 		HashMap<String , String> row[] = new HashMap[l.size()];
 		
 		int i=0;
 
-		
+		System.out.println("in service");
 		while(i<l.size()){
-			
+			System.out.println("Putting to hashmap");
 			String di="" +l.get(i).getDeptId();
 			String pi ="" +l.get(i).getProjectId();
 			String ri =	"" +	l.get(i).getRoleId();

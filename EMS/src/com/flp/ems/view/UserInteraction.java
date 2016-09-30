@@ -125,14 +125,15 @@ public class UserInteraction {
 	public void getAllEmployee(){
 		
 		HashMap<String , String >[] h = empService.getAllEmployee();
+		System.out.println(h.toString());
 		System.out.println("No of Employees  : "+ h.length+"\n");
 		System.out.println("KinID   Name  emailID     PhoneNo  DeptID   ProjectID  RoleID \n\n");
 		
 		for (HashMap<String, String> hashMap : h) {
-			System.out.println("in loop");
+			//System.out.println("in loop");
 			System.out.println(hashMap.get("kinId")+" "+hashMap.get("name")+" "+hashMap.get("emailId")+" "+hashMap.get("phoneNo")+" "+hashMap.get("deptId")+" "+hashMap.get("projectId")+" "+hashMap.get("roleId"));
-		}			
-			
+		}	
+					
 	}
 }
 
