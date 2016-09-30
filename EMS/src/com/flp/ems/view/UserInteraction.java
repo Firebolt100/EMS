@@ -11,6 +11,7 @@ import com.flp.ems.util.Validate;
 public class UserInteraction {
 	static int id;
 	EmployeeServiceImpl empService = new EmployeeServiceImpl();
+	Scanner input = new Scanner(System.in);
 	
 	public void AddEmployee(){
 		
@@ -21,7 +22,7 @@ public class UserInteraction {
 		String name = null,phoneNo = null,address= null,dob,doj,deptId= null,projectId= null,roleId = null, kinId = null, emailId= null;
 		
 		HashMap <String , String > employeedetails = new HashMap <String , String >();
-		Scanner input = new Scanner(System.in);
+		
 		id++;
 		
 		System.out.println("Enter Employee Details .....");
@@ -43,8 +44,8 @@ public class UserInteraction {
 		}
 	
 		System.out.println("Address :");
-		
-		while(f[2] == false){
+		String garb = input.nextLine(); // so dat address doesn't giv invalid d first time it runs
+=		while(f[2] == false){
 			address = input.nextLine();
 			f[2] = Validate.validateAddress(address);
 			if(f[2] == false)
@@ -115,11 +116,33 @@ public class UserInteraction {
 	}
 	public void ModifyEmployee(){
 		
+		
+		
 	}
 	public void RemoveEmployee(){
 		
 	}
 	public void SearchEmployee(){
+		
+		boolean[] f=new boolean[3];
+		for(boolean temp : f)
+		{ temp = false; }
+		
+		System.out.println("Search by    ( leave blank if you don't want to search by a field ) ");
+		
+		System.out.println("KinID ");
+		String kinId=input.next();
+		f[0]=Validate.validateNonEmpty(kinId);
+		if(f[0] == false)
+			
+		
+		System.out.println("Name ");
+		String name=input.next();
+		f[0]=Validate.validateNonEmpty(kinId);
+		
+		System.out.println("EmailID");
+		String emailId=input.next();
+		f[0]=Validate.validateNonEmpty(kinId);
 		
 	}
 	public void getAllEmployee(){
